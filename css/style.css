@@ -14,10 +14,16 @@ body {
 	background-color: #A9A9A9;
 }
 
-#map-view {
-	margin-left: 50px;
-	margin-top: 50px;
-	width: 500px;
-	height: 500px;
-	background-color: black;
+#map {
+	border-collapse: collapse;
+	padding: 4px;
+}
+
+#map td {
+	margin: 0;
+	border: 2px solid grey;
+	padding: 0;
+	background: white;
+	width: 64px;
+	height: 64px;
 }
