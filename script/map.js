@@ -1,17 +1,28 @@
-var width = 12;
-var height = 12;
+function Map(width, height) {
+	this.height = height;
+	this.width = width;
 
-function genMap() {
-  var str;
-  for(var y = 0; y < height; y++) {
-    str += "<tr>";
-    for(var x = 0; x < width; x++) {
-      str += "<td data-x='" + x + "' data-y='" + y + "'></td>";
-    }
-    str += "</tr>";
-  }
-  $("#map").html(str);
+	//TODO: Add to cookies
+
+	this.init = function() {
+		genMap(this.width, this.height);
+	};
+
+	this.getCell = function(x, y) {
+		return $("#map td[data-x='" + x + "'][data-y='" + y + "']").attr("data-cellid");
+	};
 
 }
 
-genMap();
+function genMap(width, height) {
+	var str;
+
+	for(var y = 0; y < height; y++) {
+		str += "<tr>";
+    	for(var x = 0; x < width; x++) {
+      		str += '<td data-x="' + x + '" data-y="' + y + '" data-cellid="0"></td>';
+    	}
+    	str += "</tr>";
+	}
+	$("#map").html(str);
+}
