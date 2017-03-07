@@ -1,0 +1,23 @@
+/* Global */
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Game View */
+
+#game-view {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #A9A9A9;
+}
+
+#map-view {
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 500px;
+	height: 500px;
+	background-color: black;
+}
