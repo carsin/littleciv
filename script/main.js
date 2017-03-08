@@ -9,7 +9,20 @@ $(document).ready(function() {
 
 		console.log("X: " + xClicked + " Y: " + yClicked);
 		
-		mainMap.changeCellId(xClicked, yClicked, 1);
+		//mainMap.changeCellId(xClicked, yClicked, 1);
+		tileClick(xClicked, yClicked);
+	});
+
+	$("#game-view").click(function(e) {
+		if (e.target !== this) return;
+
+		deselect(lastX, lastY);
+	});
+
+	$("#map-view").click(function(e) {
+		if (e.target !== this) return;
+
+		deselect(lastX, lastY);
 	});
 
 	mainMap.changeCellId(0, 0, 1);

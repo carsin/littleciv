@@ -32,7 +32,7 @@ function genMap(width, height) {
     	}
     	str += "</tr>";
 	}
-	$("#map").html(str);
+	$("#map").append(str);
 }
 
 function MapCell(id) {

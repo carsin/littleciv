@@ -14,7 +14,26 @@ body {
 	background-color: #F4F4F4;
 }
 
+#map-view {
+	padding: 10px;
+	display: inline-block;
+}
+
 #map {
-	border-collapse: collapse;
-	padding: 4px;
+	border: 1px solid black;
+}
+
+#info {
+	position: absolute;
+	padding: 10px;
+	margin-left: 50px;
+	margin-top: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+#info ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
