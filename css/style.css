@@ -17,6 +17,8 @@ body {
 #map {
 	border-collapse: collapse;
 	padding: 4px;
+	table-layout: fixed;
+	width: 100%;
 }
 
 #map td {
