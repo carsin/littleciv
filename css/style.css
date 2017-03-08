@@ -18,12 +18,3 @@ body {
 	border-collapse: collapse;
 	padding: 4px;
 }
-
-#map td {
-	margin: 0;
-	border: 2px solid black;
-	padding: 0;
-	background-color: #96B6FF;
-	width: 64px;
-	height: 64px;
-}

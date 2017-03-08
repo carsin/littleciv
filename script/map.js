@@ -1,3 +1,5 @@
+var mapCells = [];
+
 function Map(width, height) {
 	this.height = height;
 	this.width = width;
@@ -8,9 +10,15 @@ function Map(width, height) {
 		genMap(this.width, this.height);
 	};
 
-	this.getCell = function(x, y) {
+	this.getCellId = function(x, y) {
 		return $("#map td[data-x='" + x + "'][data-y='" + y + "']").attr("data-cellid");
 	};
+
+	this.changeCellId = function(x, y, id) {
+		$("#map td[data-x='" + x + "'][data-y='" + y + "']").attr("data-cellid", id);
+	};
+
+	this.init();
 
 }
 
@@ -25,4 +33,14 @@ function genMap(width, height) {
     	str += "</tr>";
 	}
 	$("#map").html(str);
+}
+
+function MapCell(id) {
+	this.id = id;
+
+	this.init = function() {
+		mapCells.push(this);
+	};
+
+	this.init();
 }
