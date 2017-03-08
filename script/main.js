@@ -7,6 +7,8 @@ $(document).ready(function() {
 
 	mainMap = new Map(getValueOf("size"), getValueOf("size"));
 	mainMap.init();
+	// INIT CELLS IN THEIR ID ORDER FOR ARRAY TO WORK PROPERLY
+	plains = new MapCell(0);
 
 	$("td").click(function() {
 		var xClicked = $(this).data("x");
@@ -15,7 +17,9 @@ $(document).ready(function() {
 		console.log("X: " + xClicked + " Y: " + yClicked);
 
 		this.style.background = "green";
+		mainMap.changeCellId(xClicked, yClicked, 1);
 	});
+	mainMap.changeCellId(0, 0, 1);
 });
 
 function getValueOf(value) {
