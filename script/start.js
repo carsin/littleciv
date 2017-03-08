@@ -9,3 +9,8 @@ function setScene(sceneName) {
 }
 
 setScene("start");
+
+$("#start-button").click(function() {
+    var newLoc = window.location.href.substr(0, window.location.href.lastIndexOf("/")) + "/index.html";
+    window.location.href = newLoc + "?name=" + $("#world-name").val() + "&size=50";
+});
