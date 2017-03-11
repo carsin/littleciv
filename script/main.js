@@ -1,13 +1,14 @@
 var worldArgs;
+var zoom = 80;
 
 $(document).ready(function() {
 
 	var loc = window.location.href;
 	worldArgs = loc.substr(loc.indexOf("?") + 1, loc.length - 1).split("&");
 
-	mainMap = new Map(5, 5);
+	mainMap = new Map(10, 10);
 	// INIT CELLS IN THEIR ID ORDER FOR ARRAY TO WORK PROPERLY
-	plains = new MapCell(0);
+	plains = new MapCell(0, "Plains");
 
 	$("td").click(function() {
 		var xClicked = $(this).data("x");

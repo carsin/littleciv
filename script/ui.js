@@ -4,9 +4,12 @@ var lastY;
 function tileClick(x, y) {
 	deselect(lastX, lastY);
 	$("#map td[data-x='" + x + "'][data-y='" + y + "']").addClass("selected");
-
-	//var infoDiv = $("<div>");
-	//infoDiv.append($("game-view"));
+	var tileType = mapCells[mainMap.getCellId(x, y)];
+	var infoDiv = $("<div id='info'>");
+	infoDiv.append($("<ul><li>" + tileType.name +"</li>"));
+	infoDiv.css("top", y * zoom - 50);
+	infoDiv.css("left", x * zoom + 30);
+	$("#game-view").prepend(infoDiv);
 
 	lastX = x;
 	lastY = y;
@@ -14,4 +17,5 @@ function tileClick(x, y) {
 
 function deselect(lastX, lastY) {
 	$("#map td[data-x='" + lastX + "'][data-y='" + lastY + "']").removeClass("selected");
+	$("#info").remove();
 }
