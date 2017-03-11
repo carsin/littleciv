@@ -19,6 +19,7 @@ function Map(width, height) {
 	};
 
 	this.init();
+
 }
 
 function genMap(width, height) {
