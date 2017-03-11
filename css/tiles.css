@@ -1,4 +1,5 @@
 #map td {
+	top: -1px;
 	margin: 0;
 	border: 1px solid black;
 	padding: 0;
@@ -6,6 +7,10 @@
 	background-size: cover;
 	width: 80px;
 	height: 80px;
+}
+
+#map .selected {
+	border: 1px solid #76D3FE;
 }
 
 /* Plains | ID = 0*/

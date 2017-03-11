@@ -1,5 +1,9 @@
 /* Global */
 
+html {
+	font: 15px/1.5 "Open Sans", Arial, sans-serif;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -15,12 +19,32 @@ body {
 	overflow: hidden;
 }
 
+#map-view {
+	padding: 10px;
+	display: inline-block;
+}
+
 #map {
 	position: absolute;
-	border-collapse: collapse;
 	padding: 4px;
 	table-layout: fixed;
 	width: 100%;
+	border: 1px solid black;
+}
+
+#info {
+	position: absolute;
+	padding: 10px;
+	margin-left: 50px;
+	margin-top: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+#info ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 #map td {

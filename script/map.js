@@ -31,12 +31,14 @@ function genMap(width, height) {
     	}
     	str += "</tr>";
 	}
-	$("#map").html(str);
+	$("#map").append(str);
 }
 
-function MapCell(id) {
+function MapCell(id, name) {
 	this.id = id;
-
+	this.name = name;
+	
+	
 	this.init = function() {
 		mapCells.push(this);
 	};

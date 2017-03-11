@@ -1,12 +1,12 @@
 var currentScene;
 var smallSize = 50;
 var mediumSize = 100;
-var largeSize = 200
+var largeSize = 200;
 
 function setScene(sceneName) {
     var scene = $("#" + sceneName);
     if(!scene.hasClass("scene")) return;
-    if(currentScene != undefined) currentScene.hide();
+    if(currentScene !== undefined) currentScene.hide();
     currentScene = scene;
     currentScene.show();
 }

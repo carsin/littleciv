@@ -14,6 +14,7 @@ var defaultMapSize = 100;
 var moved;
 var lastTop;
 var lastLeft;
+var zoom = 80;
 
 $(document).ready(function() {
 
@@ -23,9 +24,8 @@ $(document).ready(function() {
 	if (getValueOf("size", true) !== undefined) mainMap = new Map(getValueOf("size"), getValueOf("size"));
 	else mainMap = new Map(defaultMapSize, defaultMapSize)
 
-	mainMap.init();
 	// INIT CELLS IN THEIR ID ORDER FOR ARRAY TO WORK PROPERLY
-	plains = new MapCell(0);
+	plains = new MapCell(0, "Plains");
 
 	$("td").mouseup(function() {
 		if(!moved) {
@@ -35,7 +35,7 @@ $(document).ready(function() {
 			console.log("X: " + xClicked + " Y: " + yClicked);
 
 			this.style.background = "green";
-			if(!mouse.map.down) mainMap.changeCellId(xClicked, yClicked, 1);
+			if(!mouse.map.down) tileClick(xClicked, yClicked);
 		}
 		moved = false;
 	});
@@ -51,6 +51,19 @@ $(document).ready(function() {
 		if(mouse.map.down) moved = true;
 	});
 	$("#map").draggable();
+
+	$("#game-view").click(function(e) {
+		if (e.target !== this) return;
+
+		deselect(lastX, lastY);
+	});
+
+	$("#map-view").click(function(e) {
+		if (e.target !== this) return;
+
+		deselect(lastX, lastY);
+	});
+
 });
 
 function getValueOf(value, suppressWarnings) {
